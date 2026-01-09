@@ -1,0 +1,33 @@
+name: Build Windows Release
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1
+
+    - name: Restore NuGet Packages
+      run: nuget restore MinecraftIDChanger.sln
+
+    - name: Build App
+      run: msbuild MinecraftIDChanger.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+    - name: Upload Executable
+      uses: actions/upload-artifact@v4
+      with:
+        name: Minecraft-PSN-ID-Changer-EXE
+        path: bin/Release/MinecraftIDChanger.exe
