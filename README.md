@@ -1,8 +1,8 @@
 # Minecraft-PSN-ID-Changer
 Create custom usernames on Minecraft PS Vita via Vitacheat codes
 
-[![Windows Release CI](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/actions/workflows/windows-ci.yml/badge.svg?branch=master)](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/actions/workflows/windows-ci.yml)
-[![Windows Debug CI](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/actions/workflows/windows-ci.yml/badge.svg?branch=master)](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/actions/workflows/windows-ci.yml)
+[![Windows Release CI](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/actions/workflows/build-release.yml/badge.svg?branch=master)](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/actions/workflows/windows-ci.yml)
+[![Windows Debug CI](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/actions/workflows/build-debug.yml/badge.svg?branch=master)](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/actions/workflows/windows-ci.yml)
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/SSMG4/Minecraft-PSN-ID-Changer/total)](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/releases)
 [![GitHub Release](https://img.shields.io/github/v/release/SSMG4/Minecraft-PSN-ID-Changer)](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/releases/latest)
 [![GitHub Repo stars](https://img.shields.io/github/stars/SSMG4/Minecraft-PSN-ID-Changer)](https://github.com/SSMG4/Minecraft-PSN-ID-Changer/stargazers)
