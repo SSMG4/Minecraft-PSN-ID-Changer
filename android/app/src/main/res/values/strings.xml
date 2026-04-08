@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Minecraft PS Vita ID Changer</string>
+
+    <!-- Hints / helpers -->
+    <string name="hint_username">New PSN ID / Username</string>
+    <string name="hint_code_name">Code Name (optional)</string>
+    <string name="hint_region">Region</string>
+    <string name="helper_username">3–16 characters. Special symbols (e.g. §) supported.</string>
+    <string name="helper_code_name">Label shown in VitaCheat. Defaults to "NewID".</string>
+
+    <!-- Buttons -->
+    <string name="btn_generate">Generate VitaCheat Code</string>
+    <string name="btn_copy">Copy</string>
+    <string name="btn_share">Share</string>
+    <string name="btn_save">Save .psv</string>
+    <string name="btn_clear">Clear</string>
+
+    <!-- Labels -->
+    <string name="label_generated_code">Generated Code</string>
+
+    <!-- Toasts -->
+    <string name="toast_copied">Code copied to clipboard!</string>
+    <string name="toast_saved">File saved successfully!</string>
+
+    <!-- Warnings / errors -->
+    <string name="warn_over_limit">PSN IDs are normally max %1$d characters — in-game issues may occur.</string>
+    <string name="err_too_short">Username must be at least %1$d characters.</string>
+    <string name="err_save_title">Save Error</string>
+
+    <!-- Dialogs -->
+    <string name="dlg_length_title">Length Warning</string>
+    <string name="dlg_length_body">PSN IDs are normally capped at %1$d characters.\n\nExceeding this may cause in-game display issues. Continue anyway?</string>
+    <string name="continue_anyway">Continue</string>
+
+    <!-- Share -->
+    <string name="share_subject">Minecraft PS Vita VitaCheat Code</string>
+    <string name="share_via">Share code via…</string>
+
+    <!-- About -->
+    <string name="about_title">About</string>
+    <string name="about_body">Minecraft PS Vita PSN ID Changer\n\nGenerates VitaCheat memory-patch codes to set a custom username in Minecraft PS Vita.\n\nSupports EU (PCSB00560), US (PCSE00491), and JP (PCSG00302) game regions.\n\n© 2026 SSMG4 — GPL-3.0</string>
+
+    <!-- Menu -->
+    <string name="menu_clear">Clear</string>
+    <string name="menu_about">About</string>
+</resources>

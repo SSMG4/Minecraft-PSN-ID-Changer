@@ -1,33 +1,46 @@
-name: Build Windows Release
+name: Windows Release Build
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: ["main", "master"]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: ["main", "master"]
 
 jobs:
   build:
+    name: Build (Release) — .NET 8 / Windows
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v2
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
 
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1
+      - name: Restore dependencies
+        run: dotnet restore MinecraftIDChanger/MinecraftIDChanger.csproj
 
-    - name: Restore NuGet Packages
-      run: nuget restore MinecraftIDChanger.sln
+      - name: Build (Release)
+        run: >
+          dotnet build MinecraftIDChanger/MinecraftIDChanger.csproj
+          --configuration Release
+          --no-restore
 
-    - name: Build App
-      run: msbuild MinecraftIDChanger.sln /p:Configuration=Release /p:Platform="Any CPU"
+      - name: Publish self-contained executable
+        run: >
+          dotnet publish MinecraftIDChanger/MinecraftIDChanger.csproj
+          --configuration Release
+          --runtime win-x64
+          --self-contained false
+          --output publish/
+          -p:PublishSingleFile=true
 
-    - name: Upload Executable
-      uses: actions/upload-artifact@v4
-      with:
-        name: Minecraft-PSN-ID-Changer-EXE
-        path: MinecraftIDChanger/bin/Release/MinecraftIDChanger.exe
+      - name: Upload Release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Minecraft-PSN-ID-Changer-EXE
+          path: publish/MinecraftIDChanger.exe
+          if-no-files-found: error

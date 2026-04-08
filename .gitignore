@@ -1,5 +1,23 @@
-.vs/
-[Bb]in/
-[Oo]bj/
+# ── Windows / .NET ────────────────────────────────────────────────────────────
+bin/
+obj/
+publish/
 *.user
 *.suo
+.vs/
+*.log
+
+# ── Android / Gradle ──────────────────────────────────────────────────────────
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/app/release.jks
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# ── General ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

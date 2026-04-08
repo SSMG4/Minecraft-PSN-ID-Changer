@@ -1,171 +1,174 @@
-﻿namespace MinecraftIDChanger
+namespace MinecraftIDChanger;
+
+partial class Form1
 {
-    partial class Form1
+    private System.ComponentModel.IContainer? components = null;
+
+    protected override void Dispose(bool disposing)
     {
-        private System.ComponentModel.IContainer components = null;
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        #region Windows Form Designer generated code
-
-        private void InitializeComponent()
-        {
-            this.cmbRegion = new System.Windows.Forms.ComboBox();
-            this.txtCodeName = new System.Windows.Forms.TextBox();
-            this.txtNewID = new System.Windows.Forms.TextBox();
-            this.rtbOutput = new System.Windows.Forms.RichTextBox();
-            this.btnGenerate = new System.Windows.Forms.Button();
-            this.btnCopy = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.labNewID = new System.Windows.Forms.Label();
-            this.labGeneratedCode = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // cmbRegion
-            // 
-            this.cmbRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbRegion.FormattingEnabled = true;
-            this.cmbRegion.Items.AddRange(new object[] {
-            "PCSB00560.psv",
-            "PCSE00491.psv",
-            "PCSG00302.psv"});
-            this.cmbRegion.Location = new System.Drawing.Point(767, 535);
-            this.cmbRegion.Name = "cmbRegion";
-            this.cmbRegion.Size = new System.Drawing.Size(121, 21);
-            this.cmbRegion.TabIndex = 0;
-            this.cmbRegion.Text = "PCSB00560.psv";
-            // 
-            // txtCodeName
-            // 
-            this.txtCodeName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCodeName.Location = new System.Drawing.Point(443, 37);
-            this.txtCodeName.Name = "txtCodeName";
-            this.txtCodeName.Size = new System.Drawing.Size(526, 20);
-            this.txtCodeName.TabIndex = 1;
-            // 
-            // txtNewID
-            // 
-            this.txtNewID.Location = new System.Drawing.Point(13, 37);
-            this.txtNewID.Name = "txtNewID";
-            this.txtNewID.Size = new System.Drawing.Size(425, 20);
-            this.txtNewID.TabIndex = 2;
-            // 
-            // rtbOutput
-            // 
-            this.rtbOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbOutput.Location = new System.Drawing.Point(12, 95);
-            this.rtbOutput.Name = "rtbOutput";
-            this.rtbOutput.Size = new System.Drawing.Size(957, 434);
-            this.rtbOutput.TabIndex = 3;
-            this.rtbOutput.Text = "";
-            // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnGenerate.Location = new System.Drawing.Point(13, 535);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(100, 23);
-            this.btnGenerate.TabIndex = 4;
-            this.btnGenerate.Text = "Generate Code";
-            this.btnGenerate.UseVisualStyleBackColor = true;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // btnCopy
-            // 
-            this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCopy.Location = new System.Drawing.Point(119, 535);
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(75, 23);
-            this.btnCopy.TabIndex = 5;
-            this.btnCopy.Text = "Copy";
-            this.btnCopy.UseVisualStyleBackColor = true;
-            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(894, 535);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // labNewID
-            // 
-            this.labNewID.AutoSize = true;
-            this.labNewID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labNewID.Location = new System.Drawing.Point(8, 9);
-            this.labNewID.Name = "labNewID";
-            this.labNewID.Size = new System.Drawing.Size(86, 25);
-            this.labNewID.TabIndex = 7;
-            this.labNewID.Text = "New ID";
-            // 
-            // labGeneratedCode
-            // 
-            this.labGeneratedCode.AutoSize = true;
-            this.labGeneratedCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labGeneratedCode.Location = new System.Drawing.Point(7, 67);
-            this.labGeneratedCode.Name = "labGeneratedCode";
-            this.labGeneratedCode.Size = new System.Drawing.Size(184, 25);
-            this.labGeneratedCode.TabIndex = 8;
-            this.labGeneratedCode.Text = "Generated Code";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.26415F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(438, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 25);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Code Name";
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 570);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.labGeneratedCode);
-            this.Controls.Add(this.labNewID);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCopy);
-            this.Controls.Add(this.btnGenerate);
-            this.Controls.Add(this.rtbOutput);
-            this.Controls.Add(this.txtNewID);
-            this.Controls.Add(this.txtCodeName);
-            this.Controls.Add(this.cmbRegion);
-            this.Name = "Form1";
-            this.Text = "Minecraft PS Vita PSN ID Changer";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-        }
-
-        #endregion
-
-        private System.Windows.Forms.ComboBox cmbRegion;
-        private System.Windows.Forms.TextBox txtCodeName;
-        private System.Windows.Forms.TextBox txtNewID;
-        private System.Windows.Forms.RichTextBox rtbOutput;
-        private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Button btnCopy;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label labNewID;
-        private System.Windows.Forms.Label labGeneratedCode;
-        private System.Windows.Forms.Label label1;
+        if (disposing && components != null)
+            components.Dispose();
+        base.Dispose(disposing);
     }
+
+    #region Windows Form Designer generated code
+
+    private void InitializeComponent()
+    {
+        cmbRegion       = new ComboBox();
+        txtCodeName     = new TextBox();
+        txtNewID        = new TextBox();
+        rtbOutput       = new RichTextBox();
+        btnGenerate     = new Button();
+        btnCopy         = new Button();
+        btnSave         = new Button();
+        btnClear        = new Button();
+        lblCharCount    = new Label();
+        labNewID        = new Label();
+        labGeneratedCode = new Label();
+        labCodeName     = new Label();
+        SuspendLayout();
+
+        // ── cmbRegion ──────────────────────────────────────────────────────
+        cmbRegion.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+        cmbRegion.DropDownStyle = ComboBoxStyle.DropDownList;
+        cmbRegion.FormattingEnabled = true;
+        cmbRegion.Items.AddRange(new object[]
+        {
+            "PCSB00560.psv",   // EU
+            "PCSE00491.psv",   // US
+            "PCSG00302.psv"    // JP
+        });
+        cmbRegion.Location  = new Point(767, 535);
+        cmbRegion.Name      = "cmbRegion";
+        cmbRegion.Size      = new Size(121, 23);
+        cmbRegion.TabIndex  = 5;
+        cmbRegion.SelectedIndex = 0;
+
+        // ── labNewID ───────────────────────────────────────────────────────
+        labNewID.AutoSize  = true;
+        labNewID.Font      = new Font("Segoe UI", 10F, FontStyle.Bold);
+        labNewID.Location  = new Point(13, 9);
+        labNewID.Name      = "labNewID";
+        labNewID.Text      = "New ID";
+
+        // ── txtNewID ───────────────────────────────────────────────────────
+        txtNewID.Location  = new Point(13, 32);
+        txtNewID.Name      = "txtNewID";
+        txtNewID.Size      = new Size(380, 23);
+        txtNewID.TabIndex  = 0;
+        txtNewID.MaxLength = 64; // generous upper cap; validation warns at 16
+        txtNewID.TextChanged += txtNewID_TextChanged;
+
+        // ── lblCharCount ───────────────────────────────────────────────────
+        lblCharCount.AutoSize  = true;
+        lblCharCount.Location  = new Point(400, 35);
+        lblCharCount.Name      = "lblCharCount";
+        lblCharCount.Text      = "0/16";
+        lblCharCount.Font      = new Font("Segoe UI", 8.5F);
+        lblCharCount.ForeColor = SystemColors.GrayText;
+
+        // ── labCodeName ────────────────────────────────────────────────────
+        labCodeName.AutoSize = true;
+        labCodeName.Font     = new Font("Segoe UI", 10F, FontStyle.Bold);
+        labCodeName.Location = new Point(443, 9);
+        labCodeName.Name     = "labCodeName";
+        labCodeName.Text     = "Code Name";
+
+        // ── txtCodeName ────────────────────────────────────────────────────
+        txtCodeName.Anchor    = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        txtCodeName.Location  = new Point(443, 32);
+        txtCodeName.Name      = "txtCodeName";
+        txtCodeName.Size      = new Size(526, 23);
+        txtCodeName.TabIndex  = 1;
+
+        // ── labGeneratedCode ───────────────────────────────────────────────
+        labGeneratedCode.AutoSize = true;
+        labGeneratedCode.Font     = new Font("Segoe UI", 10F, FontStyle.Bold);
+        labGeneratedCode.Location = new Point(13, 66);
+        labGeneratedCode.Name     = "labGeneratedCode";
+        labGeneratedCode.Text     = "Generated Code";
+
+        // ── rtbOutput ──────────────────────────────────────────────────────
+        rtbOutput.Anchor   = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        rtbOutput.Font     = new Font("Consolas", 9.5F);
+        rtbOutput.Location = new Point(13, 90);
+        rtbOutput.Name     = "rtbOutput";
+        rtbOutput.ReadOnly = true;
+        rtbOutput.Size     = new Size(957, 434);
+        rtbOutput.TabIndex = 6;
+
+        // ── btnGenerate ────────────────────────────────────────────────────
+        btnGenerate.Anchor   = AnchorStyles.Bottom | AnchorStyles.Left;
+        btnGenerate.Location = new Point(13, 535);
+        btnGenerate.Name     = "btnGenerate";
+        btnGenerate.Size     = new Size(110, 25);
+        btnGenerate.TabIndex = 2;
+        btnGenerate.Text     = "Generate Code";
+        btnGenerate.UseVisualStyleBackColor = true;
+        btnGenerate.Click   += btnGenerate_Click;
+
+        // ── btnCopy ────────────────────────────────────────────────────────
+        btnCopy.Anchor   = AnchorStyles.Bottom | AnchorStyles.Left;
+        btnCopy.Location = new Point(130, 535);
+        btnCopy.Name     = "btnCopy";
+        btnCopy.Size     = new Size(75, 25);
+        btnCopy.TabIndex = 3;
+        btnCopy.Text     = "Copy";
+        btnCopy.UseVisualStyleBackColor = true;
+        btnCopy.Click   += btnCopy_Click;
+
+        // ── btnClear ───────────────────────────────────────────────────────
+        btnClear.Anchor   = AnchorStyles.Bottom | AnchorStyles.Left;
+        btnClear.Location = new Point(212, 535);
+        btnClear.Name     = "btnClear";
+        btnClear.Size     = new Size(75, 25);
+        btnClear.TabIndex = 4;
+        btnClear.Text     = "Clear";
+        btnClear.UseVisualStyleBackColor = true;
+        btnClear.Click   += btnClear_Click;
+
+        // ── btnSave ────────────────────────────────────────────────────────
+        btnSave.Anchor   = AnchorStyles.Bottom | AnchorStyles.Right;
+        btnSave.Location = new Point(895, 535);
+        btnSave.Name     = "btnSave";
+        btnSave.Size     = new Size(75, 25);
+        btnSave.TabIndex = 7;
+        btnSave.Text     = "Save";
+        btnSave.UseVisualStyleBackColor = true;
+        btnSave.Click   += btnSave_Click;
+
+        // ── Form1 ──────────────────────────────────────────────────────────
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode       = AutoScaleMode.Font;
+        ClientSize          = new Size(984, 572);
+        MinimumSize         = new Size(800, 500);
+        Controls.AddRange(new Control[]
+        {
+            labNewID, txtNewID, lblCharCount,
+            labCodeName, txtCodeName,
+            labGeneratedCode, rtbOutput,
+            btnGenerate, btnCopy, btnClear, btnSave,
+            cmbRegion
+        });
+        Name = "Form1";
+        Text = "Minecraft PS Vita PSN ID Changer";
+        ResumeLayout(false);
+        PerformLayout();
+    }
+
+    #endregion
+
+    private ComboBox      cmbRegion;
+    private TextBox       txtCodeName;
+    private TextBox       txtNewID;
+    private RichTextBox   rtbOutput;
+    private Button        btnGenerate;
+    private Button        btnCopy;
+    private Button        btnSave;
+    private Button        btnClear;
+    private Label         lblCharCount;
+    private Label         labNewID;
+    private Label         labGeneratedCode;
+    private Label         labCodeName;
 }
