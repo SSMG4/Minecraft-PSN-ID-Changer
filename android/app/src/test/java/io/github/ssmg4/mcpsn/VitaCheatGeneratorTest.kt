@@ -1,4 +1,4 @@
-package com.ssmg4.minecraftidchanger
+package io.github.ssmg4.mcpsn
 
 import org.junit.Assert.*
 import org.junit.Test

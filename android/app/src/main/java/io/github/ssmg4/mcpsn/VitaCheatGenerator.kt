@@ -1,4 +1,4 @@
-package com.ssmg4.minecraftidchanger
+package io.github.ssmg4.mcpsn
 
 /**
  * Pure-Kotlin port of the Windows VitaCheat code generator.

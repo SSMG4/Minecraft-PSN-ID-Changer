@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace   = "com.ssmg4.minecraftidchanger"
+    namespace   = "io.github.ssmg4.mcpsn"
     compileSdk  = 35
 
     defaultConfig {
-        applicationId = "com.ssmg4.minecraftidchanger"
+        applicationId = "io.github.ssmg4.mcpsn"
         minSdk        = 24          // Android 7.0 — covers ~97 % of active devices
         targetSdk     = 35
         versionCode   = 2

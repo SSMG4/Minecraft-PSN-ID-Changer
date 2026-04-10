@@ -1,4 +1,4 @@
-package com.ssmg4.minecraftidchanger
+package io.github.ssmg4.mcpsn
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.google.android.material.color.MaterialColors
-import com.ssmg4.minecraftidchanger.databinding.ActivityMainBinding
+import io.github.ssmg4.mcpsn.databinding.ActivityMainBinding
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {

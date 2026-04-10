@@ -1,3 +1,4 @@
+#nullable enable
 namespace MinecraftIDChanger;
 
 partial class Form1
