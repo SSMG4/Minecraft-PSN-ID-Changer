@@ -1,9 +1,8 @@
-#nullable enable
 namespace MinecraftIDChanger;
 
 partial class Form1
 {
-    private System.ComponentModel.IContainer? components = null;
+    private System.ComponentModel.IContainer components = null;
 
     protected override void Dispose(bool disposing)
     {
@@ -16,18 +15,17 @@ partial class Form1
 
     private void InitializeComponent()
     {
-        cmbRegion       = new ComboBox();
-        txtCodeName     = new TextBox();
-        txtNewID        = new TextBox();
-        rtbOutput       = new RichTextBox();
-        btnGenerate     = new Button();
-        btnCopy         = new Button();
-        btnSave         = new Button();
-        btnClear        = new Button();
-        lblCharCount    = new Label();
-        labNewID        = new Label();
+        cmbRegion        = new ComboBox();
+        txtCodeName      = new TextBox();
+        txtNewID         = new TextBox();
+        rtbOutput        = new RichTextBox();
+        btnGenerate      = new Button();
+        btnCopy          = new Button();
+        btnSave          = new Button();
+        btnClear         = new Button();
+        labNewID         = new Label();
         labGeneratedCode = new Label();
-        labCodeName     = new Label();
+        labCodeName      = new Label();
         SuspendLayout();
 
         // ── cmbRegion ──────────────────────────────────────────────────────
@@ -40,34 +38,25 @@ partial class Form1
             "PCSE00491.psv",   // US
             "PCSG00302.psv"    // JP
         });
-        cmbRegion.Location  = new Point(767, 535);
-        cmbRegion.Name      = "cmbRegion";
-        cmbRegion.Size      = new Size(121, 23);
-        cmbRegion.TabIndex  = 5;
+        cmbRegion.Location      = new Point(767, 535);
+        cmbRegion.Name          = "cmbRegion";
+        cmbRegion.Size          = new Size(121, 23);
+        cmbRegion.TabIndex      = 5;
         cmbRegion.SelectedIndex = 0;
 
         // ── labNewID ───────────────────────────────────────────────────────
-        labNewID.AutoSize  = true;
-        labNewID.Font      = new Font("Segoe UI", 10F, FontStyle.Bold);
-        labNewID.Location  = new Point(13, 9);
-        labNewID.Name      = "labNewID";
-        labNewID.Text      = "New ID";
+        labNewID.AutoSize = true;
+        labNewID.Font     = new Font("Segoe UI", 10F, FontStyle.Bold);
+        labNewID.Location = new Point(13, 9);
+        labNewID.Name     = "labNewID";
+        labNewID.Text     = "New ID";
 
         // ── txtNewID ───────────────────────────────────────────────────────
         txtNewID.Location  = new Point(13, 32);
         txtNewID.Name      = "txtNewID";
-        txtNewID.Size      = new Size(380, 23);
+        txtNewID.Size      = new Size(425, 23);
         txtNewID.TabIndex  = 0;
-        txtNewID.MaxLength = 64; // generous upper cap; validation warns at 16
-        txtNewID.TextChanged += txtNewID_TextChanged;
-
-        // ── lblCharCount ───────────────────────────────────────────────────
-        lblCharCount.AutoSize  = true;
-        lblCharCount.Location  = new Point(400, 35);
-        lblCharCount.Name      = "lblCharCount";
-        lblCharCount.Text      = "0/16";
-        lblCharCount.Font      = new Font("Segoe UI", 8.5F);
-        lblCharCount.ForeColor = SystemColors.GrayText;
+        txtNewID.MaxLength = 64;
 
         // ── labCodeName ────────────────────────────────────────────────────
         labCodeName.AutoSize = true;
@@ -77,11 +66,11 @@ partial class Form1
         labCodeName.Text     = "Code Name";
 
         // ── txtCodeName ────────────────────────────────────────────────────
-        txtCodeName.Anchor    = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        txtCodeName.Location  = new Point(443, 32);
-        txtCodeName.Name      = "txtCodeName";
-        txtCodeName.Size      = new Size(526, 23);
-        txtCodeName.TabIndex  = 1;
+        txtCodeName.Anchor   = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+        txtCodeName.Location = new Point(443, 32);
+        txtCodeName.Name     = "txtCodeName";
+        txtCodeName.Size     = new Size(526, 23);
+        txtCodeName.TabIndex = 1;
 
         // ── labGeneratedCode ───────────────────────────────────────────────
         labGeneratedCode.AutoSize = true;
@@ -107,7 +96,7 @@ partial class Form1
         btnGenerate.TabIndex = 2;
         btnGenerate.Text     = "Generate Code";
         btnGenerate.UseVisualStyleBackColor = true;
-        btnGenerate.Click   += btnGenerate_Click;
+        btnGenerate.Click   += new EventHandler(btnGenerate_Click);
 
         // ── btnCopy ────────────────────────────────────────────────────────
         btnCopy.Anchor   = AnchorStyles.Bottom | AnchorStyles.Left;
@@ -117,7 +106,7 @@ partial class Form1
         btnCopy.TabIndex = 3;
         btnCopy.Text     = "Copy";
         btnCopy.UseVisualStyleBackColor = true;
-        btnCopy.Click   += btnCopy_Click;
+        btnCopy.Click   += new EventHandler(btnCopy_Click);
 
         // ── btnClear ───────────────────────────────────────────────────────
         btnClear.Anchor   = AnchorStyles.Bottom | AnchorStyles.Left;
@@ -127,7 +116,7 @@ partial class Form1
         btnClear.TabIndex = 4;
         btnClear.Text     = "Clear";
         btnClear.UseVisualStyleBackColor = true;
-        btnClear.Click   += btnClear_Click;
+        btnClear.Click   += new EventHandler(btnClear_Click);
 
         // ── btnSave ────────────────────────────────────────────────────────
         btnSave.Anchor   = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -137,7 +126,7 @@ partial class Form1
         btnSave.TabIndex = 7;
         btnSave.Text     = "Save";
         btnSave.UseVisualStyleBackColor = true;
-        btnSave.Click   += btnSave_Click;
+        btnSave.Click   += new EventHandler(btnSave_Click);
 
         // ── Form1 ──────────────────────────────────────────────────────────
         AutoScaleDimensions = new SizeF(7F, 15F);
@@ -146,7 +135,7 @@ partial class Form1
         MinimumSize         = new Size(800, 500);
         Controls.AddRange(new Control[]
         {
-            labNewID, txtNewID, lblCharCount,
+            labNewID, txtNewID,
             labCodeName, txtCodeName,
             labGeneratedCode, rtbOutput,
             btnGenerate, btnCopy, btnClear, btnSave,
@@ -160,16 +149,15 @@ partial class Form1
 
     #endregion
 
-    private ComboBox      cmbRegion;
-    private TextBox       txtCodeName;
-    private TextBox       txtNewID;
-    private RichTextBox   rtbOutput;
-    private Button        btnGenerate;
-    private Button        btnCopy;
-    private Button        btnSave;
-    private Button        btnClear;
-    private Label         lblCharCount;
-    private Label         labNewID;
-    private Label         labGeneratedCode;
-    private Label         labCodeName;
+    private ComboBox    cmbRegion;
+    private TextBox     txtCodeName;
+    private TextBox     txtNewID;
+    private RichTextBox rtbOutput;
+    private Button      btnGenerate;
+    private Button      btnCopy;
+    private Button      btnSave;
+    private Button      btnClear;
+    private Label       labNewID;
+    private Label       labGeneratedCode;
+    private Label       labCodeName;
 }

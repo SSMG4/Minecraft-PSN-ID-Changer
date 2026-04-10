@@ -7,7 +7,7 @@ public partial class Form1 : Form
     // Static memory address for the Minecraft PS Vita username string
     private const uint BaseAddress = 0x8234628D;
 
-    // PSN ID rules: 3–16 chars, letters/digits/hyphens/underscores
+    // PSN ID rules: 3–16 chars
     private const int PsnMaxLength = 16;
     private const int PsnMinLength = 3;
 
@@ -16,7 +16,7 @@ public partial class Form1 : Form
         InitializeComponent();
 
         // Remove initial focus from text boxes so combo placeholder is visible
-        Shown += (_, _) =>
+        Shown += (s, e) =>
         {
             cmbRegion.SelectionLength = 0;
             ActiveControl = null;
@@ -25,12 +25,6 @@ public partial class Form1 : Form
 
     // ─── Core code generation ──────────────────────────────────────────────
 
-    /// <summary>
-    /// Generates a VitaCheat patch block for the given username.
-    /// Each 4-byte chunk of the UTF-8 encoded string is written as a
-    /// little-endian 32-bit write ($0200) starting at <see cref="BaseAddress"/>.
-    /// A final all-zero entry is always appended to null-terminate the string.
-    /// </summary>
     private static string BuildVitaCheatCode(string username, string codeName)
     {
         var sb = new StringBuilder();
@@ -38,22 +32,17 @@ public partial class Form1 : Form
 
         byte[] bytes = Encoding.UTF8.GetBytes(username);
 
-        // Write 4-byte chunks, little-endian
         for (int i = 0; i < bytes.Length; i += 4)
         {
-            byte[] chunk = new byte[4]; // zero-initialised → auto-padded
+            byte[] chunk = new byte[4];
             int count = Math.Min(4, bytes.Length - i);
             Array.Copy(bytes, i, chunk, 0, count);
-
-            Array.Reverse(chunk); // PS Vita is little-endian
-            string hex = Convert.ToHexString(chunk); // .NET 5+ — no dashes
-
+            Array.Reverse(chunk);
+            string hex = Convert.ToHexString(chunk);
             uint address = BaseAddress + (uint)i;
             sb.AppendLine($"$0200 {address:X8} {hex}");
         }
 
-        // Null terminator: one 4-byte block of zeros past the last chunk.
-        // Aligns to the next 4-byte boundary so we never overlap written bytes.
         int alignedLen = (bytes.Length + 3) / 4 * 4;
         uint nullAddress = BaseAddress + (uint)alignedLen;
         sb.AppendLine($"$0200 {nullAddress:X8} 00000000");
@@ -80,7 +69,6 @@ public partial class Form1 : Form
             return;
         }
 
-        // Soft warning for names longer than PSN allows (§ colour codes etc. still work)
         if (username.Length > PsnMaxLength)
         {
             var result = MessageBox.Show(
@@ -104,7 +92,6 @@ public partial class Form1 : Form
             ShowWarning("Please generate a code first.", "Nothing to Copy");
             return;
         }
-
         Clipboard.SetText(rtbOutput.Text);
         MessageBox.Show("Code copied to clipboard!", "Copied", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
@@ -145,14 +132,6 @@ public partial class Form1 : Form
         rtbOutput.Clear();
         cmbRegion.SelectedIndex = 0;
         ActiveControl = null;
-    }
-
-    /// <summary>Updates the character-counter label as the user types.</summary>
-    private void txtNewID_TextChanged(object sender, EventArgs e)
-    {
-        int len = txtNewID.TextLength;
-        lblCharCount.Text = $"{len}/{PsnMaxLength}";
-        lblCharCount.ForeColor = len > PsnMaxLength ? Color.Red : SystemColors.ControlText;
     }
 
     // ─── Helpers ───────────────────────────────────────────────────────────

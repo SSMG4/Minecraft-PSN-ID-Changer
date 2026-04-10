@@ -13,7 +13,7 @@
     <AssemblyTitle>MinecraftIDChanger</AssemblyTitle>
     <AssemblyProduct>MinecraftIDChanger</AssemblyProduct>
     <AssemblyCopyright>Copyright © 2026 SSMG4</AssemblyCopyright>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
